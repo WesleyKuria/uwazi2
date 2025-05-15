@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uwazi</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <span class="logo-text">Uwazi</span>
+      </div>
+      <div class="status active">
+        <span class="status-dot"></span>
+        <span class="status-text">Active</span>
+      </div>
+    </header>
+    
+    <main>
+      <div id="not-article" class="state hidden">
+        <div class="message">
+          <p>Navigate to a news article to see alternative perspectives.</p>
+        </div>
+        <button id="go-to-news" class="btn">Browse News Sites</button>
+      </div>
+      
+      <div id="analyzing" class="state hidden">
+        <div class="loading">
+          <div class="spinner"></div>
+          <p>Analyzing article content...</p>
+        </div>
+      </div>
+      
+      <div id="results" class="state">
+        <div class="article-info">
+          <h3>Current Article</h3>
+          <p id="current-article-title">Climate Activists Demand Action in Nairobi Protest</p>
+          <div class="source">
+            <span>Source: </span>
+            <span id="current-article-source">The Nation</span>
+          </div>
+        </div>
+        
+        <div class="perspectives">
+          <h3>Alternative Perspectives</h3>
+          <div class="count"><span>3</span> sources found</div>
+          
+          <ul class="perspective-list">
+            <li class="perspective-item">
+              <div class="perspective-source">Daily Nation</div>
+              <div class="perspective-title">Environmental Protests Draw Thousands to City Streets</div>
+              <div class="differences">
+                <span class="difference-tag">8 differences</span>
+                <button class="view-btn">View</button>
+              </div>
+            </li>
+            <li class="perspective-item">
+              <div class="perspective-source">The Standard</div>
+              <div class="perspective-title">Climate Riots Disrupt City Center</div>
+              <div class="differences">
+                <span class="difference-tag">15 differences</span>
+                <button class="view-btn">View</button>
+              </div>
+            </li>
+            <li class="perspective-item">
+              <div class="perspective-source">Capital FM</div>
+              <div class="perspective-title">Historic Climate March Shows Growing Public Concern</div>
+              <div class="differences">
+                <span class="difference-tag">10 differences</span>
+                <button class="view-btn">View</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+    
+    <footer>
+      <button id="toggle-overlay" class="toggle-btn active">
+        Disable Overlay
+      </button>
+      <a href="https://uwazi.app" target="_blank" class="footer-link">Open Web App</a>
+    </footer>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

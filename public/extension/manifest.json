@@ -1,0 +1,56 @@
+
+{
+  "manifest_version": 3,
+  "name": "Uwazi - See Multiple Perspectives",
+  "version": "1.0",
+  "description": "Discover how different media outlets cover the same news story with Uwazi",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://*.nation.africa/*",
+    "*://*.standardmedia.co.ke/*",
+    "*://*.capitalfm.co.ke/*",
+    "*://*.aljazeera.com/*",
+    "*://*.bbc.com/*",
+    "*://*.cnn.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.nation.africa/*",
+        "*://*.standardmedia.co.ke/*",
+        "*://*.capitalfm.co.ke/*",
+        "*://*.aljazeera.com/*",
+        "*://*.bbc.com/*",
+        "*://*.cnn.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["images/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
